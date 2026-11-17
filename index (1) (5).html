@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0f0d">
+<title>العلم — فيديوهات دينية</title>
+<style>
+:root{--bg:#0b0f0d;--card:#141b18;--line:#232d29;--gold:#d9b86c;--txt:#f3efe4;--mut:#8fa39b;--ok:#5fcf8f;--red:#ff5d6c}
+*{box-sizing:border-box;margin:0;font-family:system-ui,"Segoe UI",Tahoma,sans-serif;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--txt);max-width:620px;margin:auto;padding-bottom:calc(70px + env(safe-area-inset-bottom))}
+button{cursor:pointer;color:inherit;background:none;border:0;font-size:inherit}
+.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:22px;font-weight:800;color:var(--gold);letter-spacing:.5px}
+.stories{display:flex;gap:14px;overflow-x:auto;padding:12px 14px;border-bottom:1px solid var(--line);scrollbar-width:none}
+.stories::-webkit-scrollbar{display:none}
+.st{flex:none;width:68px;text-align:center;font-size:11px;color:var(--mut)}
+.ring{width:64px;height:64px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#d9b86c,#5fcf8f);margin:auto}
+.ring.seen{background:#2a3631}
+.st.on .ring{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--gold)}
+.ring .av{width:100%;height:100%;border-radius:50%;border:3px solid var(--bg);background:#1c2b25;color:var(--gold);display:grid;place-items:center;font-size:22px;font-weight:700}
+.st span{display:block;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:7px 13px;border-radius:18px;background:var(--card);border:1px solid var(--line);font-size:13px}
+.chip.on{background:var(--gold);color:#17140a;border-color:var(--gold);font-weight:700}
+.post{border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:6px}
+.ph{display:flex;align-items:center;gap:10px;padding:10px 14px}
+.ph .ring{width:38px;height:38px;padding:2px;margin:0}.ph .av{font-size:15px;border-width:2px}
+.pn b{font-size:14px;display:block}.pn small{color:var(--gold);font-size:12px}
+.th{position:relative;aspect-ratio:16/9;background:#18231f;cursor:pointer;overflow:hidden}
+.th img{width:100%;height:100%;object-fit:cover;display:block}
+.th .pl{position:absolute;inset:0;display:grid;place-items:center;font-size:44px;color:#fff;text-shadow:0 2px 12px #000a}
+.bd{position:absolute;top:8px;right:8px;background:#000b;color:#fff;font-size:11px;padding:3px 8px;border-radius:10px}
+.bd.w{right:auto;left:8px;background:var(--ok);color:#0b2417;font-weight:700}
+.post.done .th img{opacity:.45}
+.ac{display:flex;gap:6px;padding:8px 10px 0}
+.ac button{font-size:24px;padding:4px 8px;color:var(--txt)}
+.ac button.on.s{color:var(--red)}.ac button.on.w{color:var(--ok)}
+.tt{padding:2px 14px;font-size:15px;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.gi{position:relative;aspect-ratio:1;background:#18231f;overflow:hidden;cursor:pointer}
+.gi img{width:100%;height:100%;object-fit:cover}
+.gi .bd{font-size:10px;padding:2px 6px}
+.gi.done img{opacity:.4}
+.search{margin:10px 14px;display:block;width:calc(100% - 28px);padding:11px 14px;border-radius:12px;background:var(--card);border:1px solid var(--line);color:var(--txt);font-size:15px}
+.nav{position:fixed;bottom:0;left:0;right:0;max-width:620px;margin:auto;background:#0b0f0def;border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom);z-index:30}
+.nav button{flex:1;padding:11px 0 9px;font-size:11px;color:var(--mut);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav button i{font-style:normal;font-size:22px}.nav button.on{color:var(--gold)}
+.empty{text-align:center;color:var(--mut);padding:50px 20px;line-height:1.9}
+.sec{padding:14px}.sec h2{font-size:16px;color:var(--gold);margin-bottom:10px}
+.stat{display:flex;gap:10px;margin-bottom:14px}.stat div{flex:1;background:var(--card);border-radius:14px;padding:14px 6px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--gold)}.stat small{color:var(--mut);font-size:12px}
+.row{display:block;width:100%;text-align:right;background:var(--card);border-radius:14px;padding:14px;margin-bottom:8px;font-size:15px}
+.gold{background:var(--gold);color:#17140a;font-weight:700;border-radius:12px;padding:12px;width:100%;margin-top:6px}
+form{display:grid;gap:10px}label{font-size:13px;color:var(--mut)}
+input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:15px}
+textarea{direction:ltr;height:150px;font-size:13px}
+.back{font-size:22px;padding:4px 10px}
+#ov{position:fixed;inset:0;background:var(--bg);z-index:50;display:none;overflow-y:auto}
+#ov .bar{display:flex;align-items:center;gap:6px;padding:8px 8px;position:sticky;top:0;background:var(--bg);z-index:2}
+#pbox{position:relative;aspect-ratio:16/9;background:#000;max-width:620px;margin:auto}
+#pbox>div,#pbox iframe{position:absolute;inset:0;width:100%;height:100%}
+#ov .in{max-width:620px;margin:auto}
+.nx{display:flex;gap:10px;padding:8px 14px;align-items:center;cursor:pointer}
+.nx img{width:120px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none;background:#18231f}
+.nx div{font-size:14px;line-height:1.6}.nx small{color:var(--mut);display:block;font-size:12px}
+.toast{position:fixed;bottom:84px;left:50%;transform:translateX(-50%);background:var(--ok);color:#0b2417;padding:9px 18px;border-radius:20px;font-weight:700;display:none;z-index:99;font-size:14px;white-space:nowrap}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="ov"><div class="bar"><button class="back" onclick="closePlayer()">→</button><b id="ovt" style="font-size:15px"></b></div>
+ <div id="pbox"><div id="yt"></div></div><div class="in" id="oi"></div></div>
+<div class="toast" id="toast"></div>
+<nav class="nav" id="nav"></nav>
+<script src="data.js"></script>
+<script>
+/* ===== YouTube API ===== */
+let apiReady=false,pending=null;
+window.onYouTubeIframeAPIReady=()=>{apiReady=true;if(pending){const p=pending;pending=null;p()}};
+(function(){const s=document.createElement("script");s.src="https://www.youtube.com/iframe_api";document.head.appendChild(s)})();
+
+/* ===== التخزين ===== */
+const ls={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let watched=ls.get("watched",{}),saved=ls.get("saved",{}),extras=ls.get("extras",{});
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function toast(m){const t=$("#toast");t.textContent=m;t.style.display="block";clearTimeout(t._h);t._h=setTimeout(()=>t.style.display="none",1800)}
+
+/* ===== البيانات ===== */
+function parse(url){
+  url=(url||"").trim();
+  const v=url.match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)([\w-]{11})/);
+  if(v&&!/playlist\?/.test(url))return{kind:"v",id:v[1],key:"v:"+v[1]};
+  const l=url.match(/[?&]list=([\w-]+)/);
+  if(l)return{kind:"p",id:l[1],key:"p:"+l[1]};
+  return null;
+}
+function allVideos(){
+  const out=[];
+  DATA.scholars.forEach(s=>{
+    const secs=[...s.sections.map(x=>({...x,mine:false})),...(extras[s.name]||[]).map(x=>({...x,mine:true}))];
+    secs.forEach(sec=>sec.videos.forEach(v=>{const p=parse(v.url);if(p)out.push({key:p.key,kind:p.kind,id:p.id,title:v.title,scholar:s.name,topic:sec.title,short:!!v.short,mine:sec.mine})}));
+  });
+  return out;
+}
+const thumb=v=>v.kind==="v"?`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`:"";
+const initial=n=>n.replace(/^(دكتور|الشيخ) /,"")[0];
+function interleave(list){
+  const g={};list.forEach(v=>(g[v.scholar]=g[v.scholar]||[]).push(v));
+  const ks=Object.keys(g),out=[];let i=0,left=true;
+  while(left){left=false;ks.forEach(k=>{if(g[k][i]){out.push(g[k][i]);left=true}});i++}
+  return out;
+}
+
+/* ===== الحالة ===== */
+let tab="home",sub=null,fScholar=null,fTopic=null,query="";
+function filtered(){
+  return allVideos().filter(v=>(!fScholar||v.scholar===fScholar)&&(!fTopic||v.topic===fTopic));
+}
+function setTab(t){tab=t;sub=null;render();scrollTo(0,0)}
+function render(){
+  const A=$("#app"),vids=allVideos();
+  $("#nav").innerHTML=[["home","🏠","الرئيسية"],["explore","🔎","استكشاف"],["saved","❤️","المحفوظات"],["more","⚙️","المزيد"]]
+    .map(([k,i,t])=>`<button class="${tab===k?"on":""}" onclick="setTab('${k}')"><i>${i}</i>${t}</button>`).join("");
+  if(tab==="home")return home(A,vids);
+  if(tab==="explore")return explore(A,vids);
+  if(tab==="saved")return savedTab(A,vids);
+  return more(A,vids);
+}
+
+/* ===== الرئيسية ===== */
+function home(A,vids){
+  const stories=[`<div class="st ${!fScholar?"on":""}" onclick="pickScholar(null)"><div class="ring"><div class="av">✦</div></div><span>الكل</span></div>`]
+   .concat(DATA.scholars.map(s=>{const mine=vids.filter(v=>v.scholar===s.name),unseen=mine.some(v=>!watched[v.key]);
+     return `<div class="st ${fScholar===s.name?"on":""}" onclick="pickScholar('${s.name}')"><div class="ring ${unseen?"":"seen"}"><div class="av">${initial(s.name)}</div></div><span>${esc(s.name.replace(/^(دكتور|الشيخ) /,""))}</span></div>`})).join("");
+  const base=vids.filter(v=>!fScholar||v.scholar===fScholar);
+  const topics=[...new Set(base.map(v=>v.topic))];
+  const list=filtered();
+  const feed=fScholar?list:interleave(list);
+  A.innerHTML=`<div class="top"><div class="logo">العلم</div><div style="color:var(--mut);font-size:13px">${Object.keys(watched).length} مشاهدة</div></div>
+  <div class="stories">${stories}</div>
+  <div class="chips"><div class="chip ${!fTopic?"on":""}" onclick="pickTopic(null)">الكل</div>${topics.map(t=>`<div class="chip ${fTopic===t?"on":""}" onclick="pickTopic(this.dataset.t)" data-t="${esc(t)}">${esc(t)}</div>`).join("")}</div>
+  <div id="feed">${feed.length?feed.map(post).join(""):`<div class="empty">مفيش فيديوهات هنا لسه.</div>`}</div>`;
+  window._queue=feed.map(v=>v.key);
+}
+function pickScholar(n){fScholar=n;fTopic=null;render()}
+function pickTopic(t){fTopic=t;render()}
+function post(v){
+  return `<div class="post ${watched[v.key]?"done":""}"><div class="ph"><div class="ring"><div class="av">${initial(v.scholar)}</div></div>
+  <div class="pn"><b>${esc(v.scholar)}</b><small>🏷 ${esc(v.topic)}</small></div></div>
+  <div class="th" onclick="openPlayer('${v.key}')">${thumb(v)?`<img loading="lazy" src="${thumb(v)}" alt="" onerror="this.style.display='none'">`:""}<div class="pl">▶</div>
+   ${v.short?'<span class="bd">⏱ مقطع قصير</span>':""}${watched[v.key]?'<span class="bd w">✓ شاهدته</span>':""}</div>
+  <div class="ac"><button class="s ${saved[v.key]?"on":""}" onclick="toggleSave('${v.key}')">${saved[v.key]?"♥":"♡"}</button>
+   <button class="w ${watched[v.key]?"on":""}" onclick="toggleWatched('${v.key}')">✓</button>
+   <button onclick="share('${v.key}')">↗</button></div><div class="tt">${esc(v.title)}</div></div>`;
+}
+function keep(fn){const y=scrollY;fn();scrollTo(0,y)}
+function toggleSave(k){if(saved[k])delete saved[k];else{saved[k]=1;toast("اتحفظ ❤️")}ls.set("saved",saved);keep(render);if($("#ov").style.display==="block")ovInfo()}
+function toggleWatched(k){if(watched[k])delete watched[k];else watched[k]=1;ls.set("watched",watched);keep(render);if($("#ov").style.display==="block")ovInfo()}
+function share(k){
+  const v=allVideos().find(x=>x.key===k);if(!v)return;
+  const url=v.kind==="v"?"https://www.youtube.com/watch?v="+v.id:"https://www.youtube.com/playlist?list="+v.id;
+  if(navigator.share)navigator.share({title:v.title,url}).catch(()=>{});
+  else if(navigator.clipboard)navigator.clipboard.writeText(url).then(()=>toast("اتنسخ الرابط ✓"),()=>toast(url));
+  else toast(url);
+}
+
+/* ===== استكشاف ===== */
+function explore(A,vids){
+  const q=query.trim();
+  const list=q?vids.filter(v=>(v.title+" "+v.scholar+" "+v.topic).includes(q)):vids;
+  A.innerHTML=`<div class="top"><div class="logo">استكشاف</div></div>
+  <input class="search" id="q" type="search" placeholder="ابحث بالعنوان أو الشيخ أو الموضوع…" value="${esc(q)}">
+  ${list.length?`<div class="grid">${list.map(v=>`<div class="gi ${watched[v.key]?"done":""}" onclick="openPlayer('${v.key}',true)"><img loading="lazy" src="${thumb(v)}" alt="" onerror="this.style.display='none'">${v.short?'<span class="bd">⏱</span>':""}${watched[v.key]?'<span class="bd w">✓</span>':""}</div>`).join("")}</div>`:`<div class="empty">مفيش نتائج</div>`}`;
+  window._queue=list.map(v=>v.key);
+  const qi=$("#q");qi.oninput=()=>{query=qi.value;const p=qi.selectionStart;render();const n=$("#q");n.focus();try{n.setSelectionRange(p,p)}catch(e){}};
+}
+function savedTab(A,vids){
+  const list=vids.filter(v=>saved[v.key]);
+  A.innerHTML=`<div class="top"><div class="logo">المحفوظات</div></div>`+(list.length?list.map(post).join(""):`<div class="empty">دوس ♡ على أي فيديو وهيظهر هنا.</div>`);
+  window._queue=list.map(v=>v.key);
+}
+
+/* ===== المشغّل ===== */
+let player=null,cur=null,timer=null,isOpen=false;
+function openPlayer(key){
+  cur=key;const v=allVideos().find(x=>x.key===key);if(!v)return;
+  $("#ov").style.display="block";document.body.style.overflow="hidden";$("#ov").scrollTop=0;
+  if(!isOpen){isOpen=true;try{history.pushState({p:1},"")}catch(e){}}
+  $("#ovt").textContent=v.scholar;ovInfo();startPlayer(v);
+}
+function startPlayer(v){
+  clearInterval(timer);if(player){try{player.destroy()}catch(e){}player=null}
+  $("#pbox").innerHTML='<div id="yt"></div>';
+  const go=()=>{
+    const o={width:"100%",height:"100%",playerVars:{rel:0,playsinline:1,autoplay:1},events:{
+      onStateChange:e=>{if(e.data===0){if(v.kind==="v")mark(v.key);next()}},
+      onError:()=>toast("الفيديو مش متاح هنا — افتحه على يوتيوب")}};
+    if(v.kind==="v")o.videoId=v.id;else{o.playerVars.listType="playlist";o.playerVars.list=v.id}
+    player=new YT.Player("yt",o);
+    if(v.kind==="v")timer=setInterval(()=>{try{const d=player.getDuration();if(d>0&&player.getCurrentTime()/d>=.9)mark(v.key)}catch(e){}},4000);
+  };
+  if(apiReady&&window.YT&&YT.Player)go();else{pending=go;$("#pbox").insertAdjacentHTML("beforeend",'<div class="empty" style="color:#fff">بيتحمّل…</div>')}
+}
+function mark(k){if(watched[k])return;watched[k]=1;ls.set("watched",watched);toast("اتسجل كمشاهَد ✓");ovInfo()}
+function ovInfo(){
+  const vids=allVideos(),v=vids.find(x=>x.key===cur);if(!v)return;
+  const q=(window._queue||[]),i=q.indexOf(cur),ups=q.slice(i+1,i+13).map(k=>vids.find(x=>x.key===k)).filter(Boolean);
+  const link=v.kind==="v"?"https://www.youtube.com/watch?v="+v.id:"https://www.youtube.com/playlist?list="+v.id;
+  $("#oi").innerHTML=`<div style="padding:12px 14px"><div style="font-size:17px;line-height:1.7;font-weight:600">${esc(v.title)}</div>
+  <div style="color:var(--gold);font-size:13px;margin-top:2px">🏷 ${esc(v.topic)}${v.short?" · ⏱ مقطع قصير":""}</div></div>
+  <div class="ac"><button class="s ${saved[v.key]?"on":""}" onclick="toggleSave('${v.key}')">${saved[v.key]?"♥":"♡"}</button>
+   <button class="w ${watched[v.key]?"on":""}" onclick="toggleWatched('${v.key}')">✓</button>
+   <button onclick="share('${v.key}')">↗</button><a href="${link}" target="_blank" rel="noopener" style="margin-right:auto;align-self:center;color:var(--mut);font-size:13px;text-decoration:none;padding:8px">يوتيوب ↗</a></div>
+  ${ups.length?`<h2 style="padding:14px 14px 4px;font-size:15px;color:var(--gold)">التالي</h2>`+ups.map(u=>`<div class="nx" onclick="openPlayer('${u.key}')"><img src="${thumb(u)}" alt="" onerror="this.style.visibility='hidden'"><div>${esc(u.title)}<small>${esc(u.scholar)}${watched[u.key]?" · ✓":""}</small></div></div>`).join(""):""}`;
+}
+function next(){
+  const q=window._queue||[],i=q.indexOf(cur);
+  const n=q.slice(i+1).find(k=>!watched[k])||q[i+1];
+  if(n)openPlayer(n);
+}
+function doClose(){
+  clearInterval(timer);if(player){try{player.destroy()}catch(e){}player=null}
+  $("#ov").style.display="none";document.body.style.overflow="";$("#pbox").innerHTML='<div id="yt"></div>';isOpen=false;
+  keep(render);
+}
+function closePlayer(){if(isOpen){let h=false;try{if(history.state&&history.state.p){history.back();h=true}}catch(e){}if(!h)doClose()}}
+window.addEventListener("popstate",()=>{if(isOpen)doClose()});
+
+/* ===== المزيد ===== */
+function more(A,vids){
+  if(sub==="add")return addPage(A);if(sub==="import")return importPage(A);if(sub==="export")return exportPage(A);
+  const done=vids.filter(v=>watched[v.key]).length;
+  A.innerHTML=`<div class="top"><div class="logo">المزيد</div></div><div class="sec">
+  <div class="stat"><div><b>${vids.length}</b><small>فيديو</small></div><div><b>${done}</b><small>شاهدتها</small></div><div><b>${vids.length-done}</b><small>متبقية</small></div></div>
+  <button class="row" onclick="sub='add';render()">＋ إضافة فيديو</button>
+  <button class="row" onclick="sub='import';render()">📥 استيراد من يوتيوب (قائمة تشغيل أو روابط)</button>
+  <button class="row" onclick="sub='export';render()">📤 مشاركة محتوى القوائم</button>
+  <button class="row" style="color:var(--red)" onclick="if(confirm('تمسح كل المشاهدات والمحفوظات من الجهاز ده؟')){watched={};saved={};ls.set('watched',watched);ls.set('saved',saved);render()}">🗑 مسح المشاهدات والمحفوظات</button></div>`;
+}
+const subHead=t=>`<div class="top"><button class="back" onclick="sub=null;render()">→</button><div class="logo" style="font-size:18px">${t}</div><span></span></div>`;
+const schOpts=()=>DATA.scholars.map(s=>`<option>${esc(s.name)}</option>`).join("");
+function addTo(n,sec,items){extras[n]=extras[n]||[];let e=extras[n].find(x=>x.title===sec);if(!e){e={title:sec,videos:[]};extras[n].push(e)}items.forEach(i=>e.videos.push(i));ls.set("extras",extras)}
+function addPage(A){
+  A.innerHTML=subHead("إضافة فيديو")+`<div class="sec"><form id="f"><div><label>الشيخ</label><select id="fs">${schOpts()}</select></div>
+  <div><label>القسم</label><input id="fsec" placeholder="مثلاً: تزكية" required></div>
+  <div><label>العنوان</label><input id="ft" required></div>
+  <div><label>رابط يوتيوب</label><input id="fu" dir="ltr" placeholder="https://www.youtube.com/watch?v=..." required></div>
+  <button class="gold">حفظ</button></form></div>`;
+  $("#f").onsubmit=e=>{e.preventDefault();if(!parse($("#fu").value))return toast("الرابط مش مفهوم");
+    addTo($("#fs").value,$("#fsec").value.trim(),[{title:$("#ft").value.trim(),url:$("#fu").value.trim()}]);toast("تم ✓");setTab("home")};
+}
+async function titleOf(id){try{const c=new AbortController();setTimeout(()=>c.abort(),6000);const r=await fetch("https://www.youtube.com/oembed?format=json&url="+encodeURIComponent("https://www.youtube.com/watch?v="+id),{signal:c.signal});return r.ok?((await r.json()).title||null):null}catch(e){return null}}
+function playlistIds(list){
+  return new Promise((res,rej)=>{
+    if(!apiReady||!window.YT)return rej(new Error("مشغّل يوتيوب لسه بيتحمّل، جرّب بعد ثواني"));
+    let h=document.getElementById("hp");if(h)h.remove();h=document.createElement("div");h.id="hp";h.style.cssText="position:fixed;left:-9999px;width:220px;height:220px";document.body.appendChild(h);
+    let done=false,pl,t=0;const fin=(f,v)=>{if(done)return;done=true;clearInterval(iv);try{pl.destroy()}catch(e){}f(v)};
+    pl=new YT.Player("hp",{width:220,height:220,playerVars:{listType:"playlist",list},events:{onError:()=>fin(rej,new Error("القائمة خاصة أو مش متاحة"))}});
+    const iv=setInterval(()=>{t++;try{const a=pl.getPlaylist&&pl.getPlaylist();if(a&&a.length)return fin(res,a)}catch(e){}if(t>30)fin(rej,new Error("القائمة ماتحمّلتش"))},500);
+  });
+}
+function importPage(A){
+  A.innerHTML=subHead("استيراد من يوتيوب")+`<div class="sec"><form id="f"><div><label>الشيخ</label><select id="is">${schOpts()}</select></div>
+  <div><label>اسم القسم</label><input id="isec" required></div>
+  <div><label>رابط قائمة تشغيل، أو روابط فيديوهات (كل رابط في سطر — أو: العنوان | الرابط)</label><textarea id="il" required></textarea></div>
+  <button class="gold" id="ib">استيراد</button><div id="st" style="font-size:13px;color:var(--mut)"></div></form></div>`;
+  $("#f").onsubmit=async e=>{e.preventDefault();const st=m=>$("#st").textContent=m,btn=$("#ib");btn.disabled=true;
+    const n=$("#is").value,sec=$("#isec").value.trim(),have=new Set(allVideos().map(v=>v.key)),items=[];
+    try{
+      for(const line of $("#il").value.split("\n").map(x=>x.trim()).filter(Boolean)){
+        const b=line.indexOf("|"),t=b>-1?line.slice(0,b).trim():"",u=b>-1?line.slice(b+1).trim():line,p=parse(u);
+        if(!p){st("سطر مش مفهوم: "+line.slice(0,30));continue}
+        if(p.kind==="p"){st("بحمّل القائمة…");(await playlistIds(p.id)).forEach(id=>items.push({id,title:""}))}else items.push({id:p.id,title:t});
+      }
+      const seen=new Set(),u2=items.filter(x=>!seen.has(x.id)&&!have.has("v:"+x.id)&&seen.add(x.id));
+      if(!u2.length){st("مفيش فيديوهات جديدة.");btn.disabled=false;return}
+      let k=0;for(let i=0;i<u2.length;i+=5)await Promise.all(u2.slice(i,i+5).map(async x=>{if(!x.title)x.title=(await titleOf(x.id))||"";st(`بجيب العناوين… ${++k}/${u2.length}`)}));
+      addTo(n,sec,u2.map((x,i)=>({title:x.title||"فيديو "+(i+1),url:"https://www.youtube.com/watch?v="+x.id})));
+      toast(`اتضاف ${u2.length} ✓`);setTab("home");
+    }catch(err){st("⚠️ "+err.message);btn.disabled=false}
+  };
+}
+function exportPage(A){
+  const out=DATA.scholars.map(s=>{const secs={};allVideos().filter(v=>v.scholar===s.name).forEach(v=>{(secs[v.topic]=secs[v.topic]||[]).push({title:v.title,url:v.kind==="v"?"https://www.youtube.com/watch?v="+v.id:"https://www.youtube.com/playlist?list="+v.id,short:v.short||undefined})});
+    return{name:s.name,sections:Object.entries(secs).map(([title,videos])=>({title,videos}))}});
+  A.innerHTML=subHead("مشاركة المحتوى")+`<div class="sec"><p style="color:var(--mut);font-size:14px;line-height:1.9;margin-bottom:10px">انسخ النص والصقه مكان محتوى <b>data.js</b> وارفعه على GitHub، وكل اللي هيفتح الموقع هيشوف نفس المحتوى.</p>
+  <textarea id="tx" readonly style="height:260px"></textarea><button class="gold" onclick="navigator.clipboard.writeText($('#tx').value).then(()=>toast('اتنسخ ✓'),()=>{$('#tx').select();toast('حدد النص وانسخه')})">نسخ</button></div>`;
+  $("#tx").value="const DATA = "+JSON.stringify({scholars:out},null,1)+";";
+}
+render();
+</script>
+</body>
+</html>
