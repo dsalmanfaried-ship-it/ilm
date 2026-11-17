@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+ <link rel="manifest" href="manifest.json">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#07100d">
@@ -399,5 +400,5 @@ function exportPage(A){
 }
 render();
 </script>
-</body>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}</script></body>
 </html>
