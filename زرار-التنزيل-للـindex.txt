@@ -1,0 +1,10 @@
+ضيف الزرار ده في index.html (مكان ما تحب):
+
+<button id="inst" style="display:none;padding:10px 16px;border:0;border-radius:12px;background:#d4af37;color:#07100d;font-weight:700">⬇️ تنزيل التطبيق</button>
+
+وضيف الكود ده في نفس السكريبت اللي فيه serviceWorker:
+
+let dp; const ib=document.getElementById('inst');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;ib.style.display='inline-block';});
+ib.onclick=async()=>{ if(!dp) return; dp.prompt(); await dp.userChoice; dp=null; ib.style.display='none'; };
+window.addEventListener('appinstalled',()=>{ib.style.display='none';});
