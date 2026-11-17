@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07100d">
+<title>العلم — فيديوهات دينية</title>
+<style>
+:root{--bg:#07100d;--card:#101a16;--card2:#16241e;--line:#1f2f28;--gold:#e0bd6b;--gold2:#b8923f;--txt:#f4f0e6;--mut:#8ca59a;--ok:#5fcf8f;--red:#ff5d6c;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box;margin:0;font-family:system-ui,"Segoe UI",Tahoma,sans-serif;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);max-width:640px;margin:auto;padding-bottom:calc(76px + env(safe-area-inset-bottom));overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;opacity:.07;pointer-events:none;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%23e0bd6b' stroke-width='1'><path d='M40 4 L52 28 L76 40 L52 52 L40 76 L28 52 L4 40 L28 28 Z'/><circle cx='40' cy='40' r='11'/><path d='M40 4v72M4 40h72' opacity='.4'/></g></svg>")}
+button{cursor:pointer;color:inherit;background:none;border:0;font-size:inherit;transition:transform .15s var(--ease)}
+button:active,.press:active{transform:scale(.93)}
+.press{transition:transform .15s var(--ease);cursor:pointer}
+/* top */
+.top{position:sticky;top:0;z-index:20;background:#07100dee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 14px 8px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:23px;font-weight:800;background:linear-gradient(90deg,var(--gold),#fff3cf,var(--gold));background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% 0}}
+.pbar{position:absolute;bottom:-1px;right:0;height:2px;background:linear-gradient(90deg,var(--ok),var(--gold));transition:width .8s var(--ease)}
+.cnt{color:var(--mut);font-size:13px}
+/* stories */
+.stories{display:flex;gap:14px;overflow-x:auto;padding:14px 14px 10px;scrollbar-width:none}
+.stories::-webkit-scrollbar,.chips::-webkit-scrollbar,.hs::-webkit-scrollbar,.hero::-webkit-scrollbar{display:none}
+.st{flex:none;width:70px;text-align:center;font-size:11px;color:var(--mut);cursor:pointer}
+.ring{width:66px;height:66px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#e0bd6b,#5fcf8f,#e0bd6b);background-size:200% 200%;animation:ringmove 3.5s ease infinite;margin:auto;transition:transform .25s var(--ease)}
+@keyframes ringmove{50%{background-position:100% 100%}}
+.ring.seen{background:#2a3a33;animation:none}
+.st:active .ring{transform:scale(.9)}
+.st.on .ring{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--gold);transform:scale(1.06)}
+.av{position:relative;width:100%;height:100%;border-radius:50%;border:3px solid var(--bg);display:grid;place-items:center;font-size:24px;font-weight:800;color:#fff;overflow:hidden;text-shadow:0 2px 6px #0007}
+.av::after{content:"☾";position:absolute;top:2px;right:6px;font-size:11px;opacity:.75}
+.av::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,#fff4,transparent 55%)}
+.st span{display:block;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* hero */
+.hero{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 14px 4px;scrollbar-width:none}
+.hc{position:relative;flex:none;width:88%;aspect-ratio:16/9.4;border-radius:22px;overflow:hidden;scroll-snap-align:center;background:#12201a;box-shadow:0 12px 28px #0008}
+.hc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 6s linear,opacity .6s;opacity:0}
+.hc img.ld{opacity:1}.hc.act img{transform:scale(1.12)}
+.hc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050c09f2 5%,#050c0966 45%,transparent 75%)}
+.hc .hi{position:absolute;z-index:2;right:14px;left:14px;bottom:12px}
+.hc .tp{display:inline-block;background:var(--gold);color:#1a1405;font-size:11px;font-weight:800;padding:3px 10px;border-radius:12px;margin-bottom:6px}
+.hc h3{font-size:16px;line-height:1.5;text-shadow:0 2px 8px #000a}
+.hc small{color:#d9e6df;font-size:12px}
+.hc .pp{position:absolute;z-index:2;left:14px;top:14px;width:46px;height:46px;border-radius:50%;background:#ffffff26;backdrop-filter:blur(8px);display:grid;place-items:center;font-size:20px;border:1px solid #fff4;animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #e0bd6b66}70%{box-shadow:0 0 0 14px #e0bd6b00}100%{box-shadow:0 0 0 0 #e0bd6b00}}
+.dots{display:flex;justify-content:center;gap:5px;margin:8px 0 2px}.dots i{width:6px;height:6px;border-radius:3px;background:#2d4037;transition:all .35s var(--ease)}.dots i.on{width:18px;background:var(--gold)}
+/* rows */
+.rh{display:flex;align-items:center;justify-content:space-between;padding:18px 14px 8px}
+.rh h3{font-size:17px}.rh span{font-size:12px;color:var(--gold);cursor:pointer}
+.hs{display:flex;gap:10px;overflow-x:auto;padding:0 14px 4px;scroll-snap-type:x proximity;scrollbar-width:none}
+.mc{flex:none;width:44%;scroll-snap-align:start;cursor:pointer}
+.mc .th{border-radius:14px}
+.mc p{font-size:13px;line-height:1.6;margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mc small{color:var(--mut);font-size:11px}
+/* chips */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;scrollbar-width:none}
+.chip{flex:none;padding:8px 14px;border-radius:20px;background:var(--card);border:1px solid var(--line);font-size:13px;transition:all .25s var(--ease);cursor:pointer}
+.chip.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#17140a;border-color:transparent;font-weight:700;transform:translateY(-1px)}
+/* thumbs */
+.th{position:relative;aspect-ratio:16/9;overflow:hidden;cursor:pointer;background:linear-gradient(110deg,#12201a 30%,#1b2e26 50%,#12201a 70%);background-size:200% 100%;animation:shim 1.4s linear infinite}
+@keyframes shim{to{background-position:-200% 0}}
+.th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s,transform .5s var(--ease)}
+.th img.ld{opacity:1}.th:hover img{transform:scale(1.04)}
+.th.ldd{animation:none;background:#12201a}
+.th.er,.th.pl2{animation:none;background:linear-gradient(135deg,#1c3a30,#0f1f19);display:grid;place-items:center}
+.th.er::before,.th.pl2::before{content:"📂";font-size:38px;opacity:.8}.th.er::before{content:"🌙"}
+.th .pl{position:absolute;inset:0;display:grid;place-items:center;font-size:40px;color:#fff;text-shadow:0 2px 14px #000b;opacity:.9;transition:transform .3s var(--ease)}
+.th:active .pl{transform:scale(1.25)}
+.bd{position:absolute;top:8px;right:8px;background:#000b;color:#fff;font-size:11px;padding:3px 8px;border-radius:10px;z-index:2}
+.bd.w{right:auto;left:8px;background:var(--ok);color:#0b2417;font-weight:800}
+.done .th img{opacity:.45!important}
+/* posts */
+.post{border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:6px}
+.ph{display:flex;align-items:center;gap:10px;padding:12px 14px 10px}
+.ph .ring{width:40px;height:40px;padding:2px;margin:0;animation:none}.ph .av{font-size:16px;border-width:2px}
+.pn b{font-size:14px;display:block}.pn small{color:var(--gold);font-size:12px}
+.ac{display:flex;gap:4px;padding:8px 10px 0}
+.ac button{font-size:25px;padding:4px 9px;color:var(--txt)}
+.ac button.on.s{color:var(--red)}.ac button.on.w{color:var(--ok)}
+.pop{animation:pop .5s var(--ease)}
+@keyframes pop{0%{transform:scale(1)}30%{transform:scale(1.6)}60%{transform:scale(.9)}100%{transform:scale(1)}}
+.tt{padding:2px 14px;font-size:15px;line-height:1.7}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.pg{animation:pgin .45s var(--ease)}@keyframes pgin{from{opacity:0;transform:translateY(10px)}}
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.gi{position:relative;aspect-ratio:1;overflow:hidden;cursor:pointer;background:#12201a}
+.gi img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s,transform .4s var(--ease)}
+.gi img.ld{opacity:1}.gi:active img{transform:scale(1.08)}
+.gi.done img{opacity:.4!important}
+.gi .bd{font-size:10px;padding:2px 6px}
+.gi.pl2{display:grid;place-items:center;background:linear-gradient(135deg,#1c3a30,#0f1f19)}.gi.pl2::before{content:"📂";font-size:30px}
+.search{margin:12px 14px;display:block;width:calc(100% - 28px);padding:12px 16px;border-radius:14px;background:var(--card);border:1px solid var(--line);color:var(--txt);font-size:15px;transition:border-color .2s,box-shadow .2s}
+.search:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px #e0bd6b22}
+/* nav */
+.nav{position:fixed;bottom:0;left:0;right:0;max-width:640px;margin:auto;background:#07100df2;backdrop-filter:blur(14px);border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom);z-index:30}
+.nav button{flex:1;padding:10px 0 8px;font-size:11px;color:var(--mut);display:flex;flex-direction:column;align-items:center;gap:2px;position:relative}
+.nav button i{font-style:normal;font-size:22px;transition:transform .3s var(--ease)}
+.nav button.on{color:var(--gold)}.nav button.on i{transform:translateY(-3px) scale(1.18)}
+.nav button.on::before{content:"";position:absolute;top:0;width:28px;height:3px;border-radius:0 0 4px 4px;background:var(--gold);animation:pgin .3s}
+.empty{text-align:center;color:var(--mut);padding:50px 20px;line-height:1.9}
+.sec{padding:14px}
+.stat{display:flex;gap:10px;margin-bottom:14px}.stat div{flex:1;background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;padding:16px 6px;text-align:center}
+.stat b{display:block;font-size:24px;color:var(--gold)}.stat small{color:var(--mut);font-size:12px}
+.row{display:block;width:100%;text-align:right;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;margin-bottom:8px;font-size:15px}
+.gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#17140a;font-weight:800;border-radius:12px;padding:13px;width:100%;margin-top:6px}
+form{display:grid;gap:10px}label{font-size:13px;color:var(--mut)}
+input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:15px}
+textarea{direction:ltr;height:150px;font-size:13px}
+.back{font-size:22px;padding:4px 10px}
+/* player */
+#ov{position:fixed;inset:0;background:var(--bg);z-index:50;display:none;overflow-y:auto;transform:translateY(100%);transition:transform .45s var(--ease)}
+#ov.show{transform:none}
+#amb{position:fixed;inset:-40px;background-size:cover;background-position:center;filter:blur(50px) saturate(1.4);opacity:.35;z-index:-1;transition:background-image .6s}
+#ov .bar{display:flex;align-items:center;gap:6px;padding:8px;position:sticky;top:0;z-index:2;background:#07100dcc;backdrop-filter:blur(10px)}
+#pbox{position:relative;aspect-ratio:16/9;background:#000;max-width:640px;margin:auto;box-shadow:0 18px 40px #000a}
+#pbox>div,#pbox iframe{position:absolute;inset:0;width:100%;height:100%}
+#ov .in{max-width:640px;margin:auto}
+.nx{display:flex;gap:10px;padding:8px 14px;align-items:center;cursor:pointer;transition:background .2s}.nx:active{background:var(--card)}
+.nx .th{width:128px;flex:none;border-radius:10px}
+.nx div.t{font-size:14px;line-height:1.6}.nx small{color:var(--mut);display:block;font-size:12px}
+.toast{position:fixed;bottom:88px;left:50%;transform:translate(-50%,20px);background:var(--ok);color:#0b2417;padding:10px 20px;border-radius:22px;font-weight:800;opacity:0;pointer-events:none;z-index:99;font-size:14px;white-space:nowrap;transition:all .35s var(--ease)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="ov"><div id="amb"></div><div class="bar"><button class="back" onclick="closePlayer()">→</button><b id="ovt" style="font-size:15px"></b></div>
+ <div id="pbox"><div id="yt"></div></div><div class="in" id="oi"></div></div>
+<div class="toast" id="toast"></div>
+<nav class="nav" id="nav"></nav>
+<script src="data.js"></script>
+<script>
+/* ===== YouTube API ===== */
+let apiReady=false,pending=null;
+window.onYouTubeIframeAPIReady=()=>{apiReady=true;if(pending){const p=pending;pending=null;p()}};
+(function(){const s=document.createElement("script");s.src="https://www.youtube.com/iframe_api";document.head.appendChild(s)})();
+
+/* ===== التخزين ===== */
+const ls={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let watched=ls.get("watched",{}),saved=ls.get("saved",{}),extras=ls.get("extras",{});
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("show"),1800)}
+
+/* ===== البيانات ===== */
+const CATS=[[/قوائم/,"قوائم تشغيل","📂"],[/أسرة|زواج|علاقات/,"الأسرة والزواج","🏡"],[/قصص|قصة|حكاية|سير/,"قصص وحكايات","📜"],[/قرآن/,"القرآن","📖"],[/صلاة|الصلاة|خشوع/,"الصلاة","🕌"],[/دعاء|أدعية|مناجاة/,"الأدعية","🤲"],[/توب|رجوع|هداية/,"التوبة والرجوع","🌿"],[/موت|آخرة|دنيا/,"الموت والآخرة","⏳"],[/تحفيز|نجاح|حياة|سلوك|بداية/,"تحفيز وحياة","✨"],[/عقيدة/,"عقيدة وإيمان","🌙"]];
+function catOf(t){for(const [r,n,i] of CATS)if(r.test(t))return{name:n,icon:i};return{name:"تزكية ورقائق",icon:"💚"}}
+const GR=[["#d9a441","#7a4f12"],["#3fae8a","#14503f"],["#5b8def","#1d3b87"],["#c0617a","#6b1f36"],["#8e6bd1","#3d2475"],["#e07a4f","#7a2f12"],["#4fb3c9","#17536a"],["#b9a24a","#5a4c14"]];
+function parse(url){
+  url=(url||"").trim();
+  const v=url.match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)([\w-]{11})/);
+  if(v&&!/playlist\?/.test(url))return{kind:"v",id:v[1],key:"v:"+v[1]};
+  const l=url.match(/[?&]list=([\w-]+)/);
+  if(l)return{kind:"p",id:l[1],key:"p:"+l[1]};
+  return null;
+}
+let _all=null;
+function allVideos(){
+  if(_all)return _all;
+  const out=[];
+  DATA.scholars.forEach((s,si)=>{
+    const secs=[...s.sections.map(x=>({...x,mine:false})),...(extras[s.name]||[]).map(x=>({...x,mine:true}))];
+    secs.forEach(sec=>sec.videos.forEach(v=>{const p=parse(v.url);if(p){const c=catOf(sec.title);out.push({key:p.key,kind:p.kind,id:p.id,title:v.title,scholar:s.name,si,topic:sec.title,cat:c.name,icon:c.icon,short:!!v.short,mine:sec.mine})}}));
+  });
+  return(_all=out);
+}
+const invalidate=()=>{_all=null};
+const thumbUrl=(v,q)=>v.kind==="v"?`https://i.ytimg.com/vi/${v.id}/${q||"hqdefault"}.jpg`:"";
+const initial=n=>n.replace(/^(دكتور|الشيخ) /,"")[0];
+const avatar=(n,i)=>`<div class="av" style="background:linear-gradient(135deg,${GR[i%GR.length][0]},${GR[i%GR.length][1]})">${initial(n)}</div>`;
+function thumb(v,cls,q){
+  if(v.kind!=="v")return `<div class="th pl2 ${cls||""}"></div>`;
+  return `<div class="th ${cls||""}"><img loading="lazy" src="${thumbUrl(v,q)}" alt="" onload="this.classList.add('ld');this.parentNode.classList.add('ldd')" onerror="this.parentNode.classList.add('er');this.remove()"></div>`;
+}
+function interleave(list){
+  const g={};list.forEach(v=>(g[v.scholar]=g[v.scholar]||[]).push(v));
+  const ks=Object.keys(g),out=[];let i=0,left=true;
+  while(left){left=false;ks.forEach(k=>{if(g[k][i]){out.push(g[k][i]);left=true}});i++}
+  return out;
+}
+
+/* ===== الحالة ===== */
+let tab="home",sub=null,fScholar=null,fCat=null,query="",animate=false,popKey=null,heroTimer=null,heroIdx=0;
+function filtered(){return allVideos().filter(v=>(!fScholar||v.scholar===fScholar)&&(!fCat||v.cat===fCat))}
+function setTab(t){tab=t;sub=null;animate=true;render();scrollTo(0,0)}
+function render(){
+  clearInterval(heroTimer);invalidate();
+  const A=$("#app"),vids=allVideos();
+  $("#nav").innerHTML=[["home","🏠","الرئيسية"],["explore","🔎","استكشاف"],["saved","❤️","المحفوظات"],["more","⚙️","المزيد"]]
+    .map(([k,i,t])=>`<button class="${tab===k?"on":""}" onclick="setTab('${k}')"><i>${i}</i>${t}</button>`).join("");
+  if(tab==="home")home(A,vids);else if(tab==="explore")explore(A,vids);else if(tab==="saved")savedTab(A,vids);else more(A,vids);
+  if(animate){A.firstElementChild&&A.firstElementChild.classList.add("pg");animate=false}
+  reveal();
+  if(popKey)setTimeout(()=>popKey=null,600);
+}
+function reveal(){
+  const els=document.querySelectorAll(".rv:not(.in)");
+  if(typeof IntersectionObserver==="undefined"){els.forEach(e=>e.classList.add("in"));return}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -6% 0px",threshold:.05});
+  els.forEach(e=>io.observe(e));
+}
+const topBar=vids=>{const d=vids.filter(v=>watched[v.key]).length,pc=vids.length?Math.round(d/vids.length*100):0;
+  return `<div class="top"><div class="logo">العلم</div><div class="cnt">${d} / ${vids.length} شاهدتها</div><div class="pbar" style="width:${pc}%"></div></div>`};
+
+/* ===== الرئيسية ===== */
+function home(A,vids){
+  const stories=[`<div class="st press ${!fScholar?"on":""}" onclick="pickScholar(null)"><div class="ring"><div class="av" style="background:linear-gradient(135deg,#e0bd6b,#8a6a1f)">✦</div></div><span>الكل</span></div>`]
+   .concat(DATA.scholars.map((s,i)=>{const unseen=vids.some(v=>v.scholar===s.name&&!watched[v.key]);
+     return `<div class="st press ${fScholar===s.name?"on":""}" onclick="pickScholar('${s.name}')"><div class="ring ${unseen?"":"seen"}">${avatar(s.name,i)}</div><span>${esc(s.name.replace(/^(دكتور|الشيخ) /,""))}</span></div>`})).join("");
+  const base=vids.filter(v=>!fScholar||v.scholar===fScholar);
+  const cats=[...new Map(base.map(v=>[v.cat,v.icon]))];
+  const list=filtered(),feed=fScholar?list:interleave(list),showRows=!fScholar&&!fCat;
+  let h=topBar(vids)+`<div class="stories">${stories}</div>`;
+  if(showRows){
+    const picks=interleave(vids.filter(v=>v.kind==="v"&&!watched[v.key])).slice(0,6);
+    if(picks.length){
+      h+=`<div class="hero" id="hero">${picks.map((v,i)=>`<div class="hc press ${i===0?"act":""}" onclick="openPlayer('${v.key}',_hq)">
+        <img src="${thumbUrl(v,"maxresdefault")}" alt="" onload="if(this.naturalWidth<200)this.src='${thumbUrl(v)}';else this.classList.add('ld')" onerror="this.onerror=null;this.src='${thumbUrl(v)}';this.classList.add('ld')">
+        <div class="pp">▶</div><div class="hi"><span class="tp">${v.icon} ${esc(v.cat)}</span><h3>${esc(v.title)}</h3><small>${esc(v.scholar)}</small></div></div>`).join("")}</div>
+        <div class="dots" id="dots">${picks.map((_,i)=>`<i class="${i===0?"on":""}"></i>`).join("")}</div>`;
+      window._hq=picks.map(v=>v.key);
+    }
+  }
+  h+=`<div class="chips"><div class="chip ${!fCat?"on":""}" onclick="pickCat(null)">الكل</div>${cats.map(([c,i])=>`<div class="chip ${fCat===c?"on":""}" onclick="pickCat(this.dataset.c)" data-c="${esc(c)}">${i} ${esc(c)}</div>`).join("")}</div>`;
+  if(showRows){
+    const byCat={};vids.forEach(v=>(byCat[v.cat]=byCat[v.cat]||[]).push(v));
+    h+=Object.entries(byCat).filter(([c,a])=>a.length>=3).sort((a,b)=>b[1].length-a[1].length).slice(0,6).map(([c,a])=>{
+      const row=interleave(a).slice(0,10);
+      return `<div class="rv"><div class="rh"><h3>${a[0].icon} ${esc(c)}</h3><span onclick="pickCat(this.dataset.c)" data-c="${esc(c)}">عرض الكل ›</span></div>
+      <div class="hs" data-row="${row.map(v=>v.key).join(",")}">${row.map(v=>`<div class="mc ${watched[v.key]?"done":""}" onclick="openPlayer('${v.key}',this.parentNode.dataset.row.split(','))">${thumb(v,"",)}<p>${esc(v.title)}</p><small>${esc(v.scholar)}</small></div>`).join("")}</div></div>`}).join("");
+    h+=`<div class="rh"><h3>🎞 كل الفيديوهات</h3><span class="cnt">${feed.length}</span></div>`;
+  }
+  h+=`<div id="feed">${feed.length?feed.map(post).join(""):`<div class="empty">مفيش فيديوهات هنا لسه.</div>`}</div>`;
+  A.innerHTML=`<div>${h}</div>`;
+  window._queue=feed.map(v=>v.key);
+  initHero();
+}
+function initHero(){
+  const hero=$("#hero");if(!hero)return;
+  const cards=[...hero.children],dots=[...document.querySelectorAll("#dots i")];
+  const setAct=i=>{heroIdx=i;cards.forEach((c,k)=>c.classList.toggle("act",k===i));dots.forEach((d,k)=>d.classList.toggle("on",k===i))};
+  let t;hero.addEventListener("scroll",()=>{clearTimeout(t);t=setTimeout(()=>{const r=hero.getBoundingClientRect(),mid=r.left+r.width/2;let b=0,bd=1e9;cards.forEach((c,k)=>{const q=c.getBoundingClientRect(),d=Math.abs(q.left+q.width/2-mid);if(d<bd){bd=d;b=k}});setAct(b)},80)},{passive:true});
+  heroTimer=setInterval(()=>{if(document.hidden||$("#ov").classList.contains("show"))return;const n=(heroIdx+1)%cards.length;const c=cards[n];hero.scrollTo({left:hero.scrollLeft+(c.getBoundingClientRect().left+c.getBoundingClientRect().width/2-(hero.getBoundingClientRect().left+hero.getBoundingClientRect().width/2)),behavior:"smooth"});setAct(n)},5000);
+}
+function pickScholar(n){fScholar=n;fCat=null;animate=true;render()}
+function pickCat(c){fCat=c;animate=true;render();scrollTo({top:0})}
+function post(v){
+  return `<div class="post rv ${watched[v.key]?"done":""}"><div class="ph"><div class="ring seen" style="background:linear-gradient(135deg,${GR[v.si%GR.length][0]},${GR[v.si%GR.length][1]})">${avatar(v.scholar,v.si)}</div>
+  <div class="pn"><b>${esc(v.scholar)}</b><small>${v.icon} ${esc(v.topic)}</small></div></div>
+  <div style="position:relative" onclick="openPlayer('${v.key}')">${thumb(v)}<div class="pl">▶</div>
+   ${v.short?'<span class="bd">⏱ مقطع قصير</span>':""}${watched[v.key]?'<span class="bd w">✓ شاهدته</span>':""}</div>
+  <div class="ac"><button class="s ${saved[v.key]?"on":""} ${popKey===v.key?"pop":""}" onclick="toggleSave('${v.key}')">${saved[v.key]?"♥":"♡"}</button>
+   <button class="w ${watched[v.key]?"on":""}" onclick="toggleWatched('${v.key}')">✓</button>
+   <button onclick="share('${v.key}')">↗</button></div><div class="tt">${esc(v.title)}</div></div>`;
+}
+function keep(fn){const y=scrollY;fn();scrollTo({top:y,behavior:"instant"})}
+function toggleSave(k){if(saved[k])delete saved[k];else{saved[k]=1;popKey=k;toast("اتحفظ ❤️")}ls.set("saved",saved);keep(render);if($("#ov").classList.contains("show"))ovInfo()}
+function toggleWatched(k){if(watched[k])delete watched[k];else{watched[k]=1;toast("اتسجل كمشاهَد ✓")}ls.set("watched",watched);keep(render);if($("#ov").classList.contains("show"))ovInfo()}
+function share(k){
+  const v=allVideos().find(x=>x.key===k);if(!v)return;
+  const url=v.kind==="v"?"https://www.youtube.com/watch?v="+v.id:"https://www.youtube.com/playlist?list="+v.id;
+  if(navigator.share)navigator.share({title:v.title,url}).catch(()=>{});
+  else if(navigator.clipboard)navigator.clipboard.writeText(url).then(()=>toast("اتنسخ الرابط ✓"),()=>toast(url));
+  else toast(url);
+}
+
+/* ===== استكشاف ===== */
+function explore(A,vids){
+  const q=query.trim(),list=q?vids.filter(v=>(v.title+" "+v.scholar+" "+v.topic+" "+v.cat).includes(q)):vids;
+  A.innerHTML=`<div>${topBar(vids)}
+  <input class="search" id="q" type="search" placeholder="🔎 ابحث بالعنوان أو الشيخ أو الموضوع…" value="${esc(q)}">
+  ${list.length?`<div class="grid">${list.map(v=>`<div class="gi ${v.kind==="p"?"pl2":""} ${watched[v.key]?"done":""}" onclick="openPlayer('${v.key}',this.parentNode.dataset.q.split(','))">${v.kind==="v"?`<img loading="lazy" src="${thumbUrl(v)}" alt="" onload="this.classList.add('ld')" onerror="this.remove()">`:""}${v.short?'<span class="bd">⏱</span>':""}${watched[v.key]?'<span class="bd w">✓</span>':""}</div>`).join("")}</div>`:`<div class="empty">مفيش نتائج</div>`}</div>`;
+  const g=A.querySelector(".grid");if(g)g.dataset.q=list.map(v=>v.key).join(",");
+  window._queue=list.map(v=>v.key);
+  const qi=$("#q");qi.oninput=()=>{query=qi.value;const p=qi.selectionStart;render();const n=$("#q");n.focus();try{n.setSelectionRange(p,p)}catch(e){}};
+}
+function savedTab(A,vids){
+  const list=vids.filter(v=>saved[v.key]);
+  A.innerHTML=`<div>${topBar(vids)}`+(list.length?list.map(post).join(""):`<div class="empty" style="font-size:48px">❤️<div style="font-size:15px;margin-top:10px">دوس ♡ على أي فيديو وهيظهر هنا.</div></div>`)+`</div>`;
+  window._queue=list.map(v=>v.key);
+}
+
+/* ===== المشغّل ===== */
+let player=null,cur=null,timer=null,isOpen=false;
+function openPlayer(key,q){
+  if(Array.isArray(q))window._queue=q;
+  cur=key;const v=allVideos().find(x=>x.key===key);if(!v)return;
+  const ov=$("#ov");ov.style.display="block";document.body.style.overflow="hidden";ov.scrollTop=0;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>ov.classList.add("show")));
+  if(!isOpen){isOpen=true;try{history.pushState({p:1},"")}catch(e){}}
+  $("#ovt").textContent=v.scholar;$("#amb").style.backgroundImage=v.kind==="v"?`url(${thumbUrl(v)})`:"none";
+  ovInfo();startPlayer(v);
+}
+function startPlayer(v){
+  clearInterval(timer);if(player){try{player.destroy()}catch(e){}player=null}
+  $("#pbox").innerHTML='<div id="yt"></div>';
+  const go=()=>{
+    const o={width:"100%",height:"100%",playerVars:{rel:0,playsinline:1,autoplay:1},events:{
+      onStateChange:e=>{if(e.data===0){if(v.kind==="v")mark(v.key);next()}},
+      onError:()=>toast("الفيديو مش متاح هنا — افتحه على يوتيوب")}};
+    if(v.kind==="v")o.videoId=v.id;else{o.playerVars.listType="playlist";o.playerVars.list=v.id}
+    player=new YT.Player("yt",o);
+    if(v.kind==="v")timer=setInterval(()=>{try{const d=player.getDuration();if(d>0&&player.getCurrentTime()/d>=.9)mark(v.key)}catch(e){}},4000);
+  };
+  if(apiReady&&window.YT&&YT.Player)go();else{pending=go;$("#pbox").insertAdjacentHTML("beforeend",'<div class="empty" style="color:#fff;position:absolute;inset:0;display:grid;place-items:center">بيتحمّل…</div>')}
+}
+function mark(k){if(watched[k])return;watched[k]=1;ls.set("watched",watched);toast("اتسجل كمشاهَد ✓");ovInfo()}
+function ovInfo(){
+  const vids=allVideos(),v=vids.find(x=>x.key===cur);if(!v)return;
+  const q=(window._queue||[]),i=q.indexOf(cur),ups=q.slice(i+1,i+13).map(k=>vids.find(x=>x.key===k)).filter(Boolean);
+  const link=v.kind==="v"?"https://www.youtube.com/watch?v="+v.id:"https://www.youtube.com/playlist?list="+v.id;
+  $("#oi").innerHTML=`<div style="padding:14px"><div style="font-size:18px;line-height:1.7;font-weight:700">${esc(v.title)}</div>
+  <div style="color:var(--gold);font-size:13px;margin-top:3px">${v.icon} ${esc(v.topic)}${v.short?" · ⏱ مقطع قصير":""}</div></div>
+  <div class="ac"><button class="s ${saved[v.key]?"on":""} ${popKey===v.key?"pop":""}" onclick="toggleSave('${v.key}')">${saved[v.key]?"♥":"♡"}</button>
+   <button class="w ${watched[v.key]?"on":""}" onclick="toggleWatched('${v.key}')">✓</button>
+   <button onclick="share('${v.key}')">↗</button><a href="${link}" target="_blank" rel="noopener" style="margin-right:auto;align-self:center;color:var(--mut);font-size:13px;text-decoration:none;padding:8px">يوتيوب ↗</a></div>
+  ${ups.length?`<h2 style="padding:16px 14px 6px;font-size:15px;color:var(--gold)">التالي</h2>`+ups.map(u=>`<div class="nx" onclick="openPlayer('${u.key}')">${thumb(u)}<div class="t">${esc(u.title)}<small>${esc(u.scholar)}${watched[u.key]?" · ✓":""}</small></div></div>`).join(""):""}`;
+}
+function next(){
+  const q=window._queue||[],i=q.indexOf(cur),n=q.slice(i+1).find(k=>!watched[k])||q[i+1];
+  if(n)openPlayer(n);
+}
+function doClose(){
+  clearInterval(timer);if(player){try{player.destroy()}catch(e){}player=null}
+  const ov=$("#ov");ov.classList.remove("show");isOpen=false;document.body.style.overflow="";
+  setTimeout(()=>{if(!isOpen){ov.style.display="none";$("#pbox").innerHTML='<div id="yt"></div>'}},420);
+  keep(render);
+}
+function closePlayer(){if(isOpen){let h=false;try{if(history.state&&history.state.p){history.back();h=true}}catch(e){}if(!h)doClose()}}
+window.addEventListener("popstate",()=>{if(isOpen)doClose()});
+
+/* ===== المزيد ===== */
+function more(A,vids){
+  if(sub==="add")return addPage(A);if(sub==="import")return importPage(A);if(sub==="export")return exportPage(A);
+  const done=vids.filter(v=>watched[v.key]).length;
+  A.innerHTML=`<div>${topBar(vids)}<div class="sec">
+  <div class="stat"><div><b>${vids.length}</b><small>فيديو</small></div><div><b>${done}</b><small>شاهدتها</small></div><div><b>${Object.keys(saved).length}</b><small>محفوظة</small></div></div>
+  <button class="row press" onclick="sub='add';render()">＋ إضافة فيديو</button>
+  <button class="row press" onclick="sub='import';render()">📥 استيراد من يوتيوب (قائمة تشغيل أو روابط)</button>
+  <button class="row press" onclick="sub='export';render()">📤 مشاركة محتوى القوائم</button>
+  <button class="row press" style="color:var(--red)" onclick="if(confirm('تمسح كل المشاهدات والمحفوظات من الجهاز ده؟')){watched={};saved={};ls.set('watched',watched);ls.set('saved',saved);render()}">🗑 مسح المشاهدات والمحفوظات</button></div></div>`;
+}
+const subHead=t=>`<div class="top"><button class="back" onclick="sub=null;render()">→</button><div class="logo" style="font-size:18px">${t}</div><span></span></div>`;
+const schOpts=()=>DATA.scholars.map(s=>`<option>${esc(s.name)}</option>`).join("");
+function addTo(n,sec,items){extras[n]=extras[n]||[];let e=extras[n].find(x=>x.title===sec);if(!e){e={title:sec,videos:[]};extras[n].push(e)}items.forEach(i=>e.videos.push(i));ls.set("extras",extras);invalidate()}
+function addPage(A){
+  A.innerHTML=`<div>`+subHead("إضافة فيديو")+`<div class="sec"><form id="f"><div><label>الشيخ</label><select id="fs">${schOpts()}</select></div>
+  <div><label>القسم</label><input id="fsec" placeholder="مثلاً: تزكية" required></div>
+  <div><label>العنوان</label><input id="ft" required></div>
+  <div><label>رابط يوتيوب</label><input id="fu" dir="ltr" placeholder="https://www.youtube.com/watch?v=..." required></div>
+  <button class="gold">حفظ</button></form></div></div>`;
+  $("#f").onsubmit=e=>{e.preventDefault();if(!parse($("#fu").value))return toast("الرابط مش مفهوم");
+    addTo($("#fs").value,$("#fsec").value.trim(),[{title:$("#ft").value.trim(),url:$("#fu").value.trim()}]);toast("تم ✓");setTab("home")};
+}
+async function titleOf(id){try{const c=new AbortController();setTimeout(()=>c.abort(),6000);const r=await fetch("https://www.youtube.com/oembed?format=json&url="+encodeURIComponent("https://www.youtube.com/watch?v="+id),{signal:c.signal});return r.ok?((await r.json()).title||null):null}catch(e){return null}}
+function playlistIds(list){
+  return new Promise((res,rej)=>{
+    if(!apiReady||!window.YT)return rej(new Error("مشغّل يوتيوب لسه بيتحمّل، جرّب بعد ثواني"));
+    let h=document.getElementById("hp");if(h)h.remove();h=document.createElement("div");h.id="hp";h.style.cssText="position:fixed;left:-9999px;width:220px;height:220px";document.body.appendChild(h);
+    let done=false,pl,t=0;const fin=(f,v)=>{if(done)return;done=true;clearInterval(iv);try{pl.destroy()}catch(e){}f(v)};
+    pl=new YT.Player("hp",{width:220,height:220,playerVars:{listType:"playlist",list},events:{onError:()=>fin(rej,new Error("القائمة خاصة أو مش متاحة"))}});
+    const iv=setInterval(()=>{t++;try{const a=pl.getPlaylist&&pl.getPlaylist();if(a&&a.length)return fin(res,a)}catch(e){}if(t>30)fin(rej,new Error("القائمة ماتحمّلتش"))},500);
+  });
+}
+function importPage(A){
+  A.innerHTML=`<div>`+subHead("استيراد من يوتيوب")+`<div class="sec"><form id="f"><div><label>الشيخ</label><select id="is">${schOpts()}</select></div>
+  <div><label>اسم القسم</label><input id="isec" required></div>
+  <div><label>رابط قائمة تشغيل، أو روابط فيديوهات (كل رابط في سطر — أو: العنوان | الرابط)</label><textarea id="il" required></textarea></div>
+  <button class="gold" id="ib">استيراد</button><div id="st" style="font-size:13px;color:var(--mut)"></div></form></div></div>`;
+  $("#f").onsubmit=async e=>{e.preventDefault();const st=m=>$("#st").textContent=m,btn=$("#ib");btn.disabled=true;
+    const n=$("#is").value,sec=$("#isec").value.trim(),have=new Set(allVideos().map(v=>v.key)),items=[];
+    try{
+      for(const line of $("#il").value.split("\n").map(x=>x.trim()).filter(Boolean)){
+        const b=line.indexOf("|"),t=b>-1?line.slice(0,b).trim():"",u=b>-1?line.slice(b+1).trim():line,p=parse(u);
+        if(!p){st("سطر مش مفهوم: "+line.slice(0,30));continue}
+        if(p.kind==="p"){st("بحمّل القائمة…");(await playlistIds(p.id)).forEach(id=>items.push({id,title:""}))}else items.push({id:p.id,title:t});
+      }
+      const seen=new Set(),u2=items.filter(x=>!seen.has(x.id)&&!have.has("v:"+x.id)&&seen.add(x.id));
+      if(!u2.length){st("مفيش فيديوهات جديدة.");btn.disabled=false;return}
+      let k=0;for(let i=0;i<u2.length;i+=5)await Promise.all(u2.slice(i,i+5).map(async x=>{if(!x.title)x.title=(await titleOf(x.id))||"";st(`بجيب العناوين… ${++k}/${u2.length}`)}));
+      addTo(n,sec,u2.map((x,i)=>({title:x.title||"فيديو "+(i+1),url:"https://www.youtube.com/watch?v="+x.id})));
+      toast(`اتضاف ${u2.length} ✓`);setTab("home");
+    }catch(err){st("⚠️ "+err.message);btn.disabled=false}
+  };
+}
+function exportPage(A){
+  const out=DATA.scholars.map(s=>{const secs={};allVideos().filter(v=>v.scholar===s.name).forEach(v=>{(secs[v.topic]=secs[v.topic]||[]).push({title:v.title,url:v.kind==="v"?"https://www.youtube.com/watch?v="+v.id:"https://www.youtube.com/playlist?list="+v.id,short:v.short||undefined})});
+    return{name:s.name,sections:Object.entries(secs).map(([title,videos])=>({title,videos}))}});
+  A.innerHTML=`<div>`+subHead("مشاركة المحتوى")+`<div class="sec"><p style="color:var(--mut);font-size:14px;line-height:1.9;margin-bottom:10px">انسخ النص والصقه مكان محتوى <b>data.js</b> وارفعه على GitHub، وكل اللي هيفتح الموقع هيشوف نفس المحتوى.</p>
+  <textarea id="tx" readonly style="height:260px"></textarea><button class="gold" onclick="navigator.clipboard.writeText($('#tx').value).then(()=>toast('اتنسخ ✓'),()=>{$('#tx').select();toast('حدد النص وانسخه')})">نسخ</button></div></div>`;
+  $("#tx").value="const DATA = "+JSON.stringify({scholars:out},null,1)+";";
+}
+render();
+</script>
+</body>
+</html>
